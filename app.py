@@ -15,7 +15,6 @@ def home():
 
 def Summarize():
     text=request.form["input"]
-    #print(text)
     stopWords = set (stopwords.words ("english"))
     words = word_tokenize(text)
     freqTable = dict()
@@ -37,7 +36,7 @@ def Summarize():
                 if sentence in sentenceValue:
                     sentenceValue[sentence] += freq
                 else:
-                    sentenceValue [ sentence] = freq
+                    sentenceValue [sentence] = freq
 
     sumValues = 0
     for sentence in sentenceValue:
@@ -48,7 +47,5 @@ def Summarize():
     for sentence in sentences:
         if (sentence in sentenceValue) and (sentenceValue [sentence] > (1.2 * average)):
             summary += sentence
-    #print(summary)
     return render_template("index.html",result=summary)
-#Summarize()
 app.run(host="localhost",port=8080)
