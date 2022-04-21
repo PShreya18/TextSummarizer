@@ -17,10 +17,13 @@ summary_length=0
 input_wordlen=0
 summary_wordlen=0
 
-pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-image1=Image.open("img2.png")
-text=pytesseract.image_to_string(image1)
-print(text)
+@app.route("/extract")
+def extract():
+    pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    image1=Image.open("img2.png")
+    text=pytesseract.image_to_string(image1)
+    #path=r"C:\Users\hp\OneDrive\Desktop\sem6\Mini Project\Project\img2.png"
+    return "<html><center><img src=static\img2.png alt=Image></center><br><h3>Extracted Text:</h3>"+text+"</html>"
 
 
 @app.route("/home")
