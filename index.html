@@ -15,36 +15,32 @@
 </head>
 
 <body>
-    <p class="text-center fs-1 text-success">TEXT SUMMARIZER</p>
+    <p class="text-center fs-1 text-success">SUMMARIZE,ANALYZE,TRANSLATE TEXT!</p>
     <div class="container p-3">
         <div class="row g-3">
             <div class="col">
                 <form action="/process" method="post">
                     <div class="form-group">
                         <label for="input" class="text-black fs-4">Summarizer</label><br>
-                        <textarea name="input" id="inp" cols="35" rows="10" class="form-control form-control-lg"
-                            placeholder="Enter text to summarize"></textarea>
+                        <textarea name="input" id="inp" cols="35" rows="10" class="form-control form-control-lg" placeholder="Enter text to summarize"></textarea>
                     </div>
             </div>
             <div class="col">
                 <div>
                     <label for="summary" class="text-black fs-4">Summary</label><br>
-                    <textarea name="output" id="outp" cols="35" rows="10" class="form-control form-control-lg"
-                        readonly="" placeholder="Your summary will be displayed here...">{{result}}</textarea>
+                    <textarea name="output" id="outp" cols="35" rows="10" readonly="" class="form-control form-control-lg" placeholder="Your summary will be displayed here...">{{result}}</textarea>
                 </div>
             </div>
         </div>
-        <div class="row"><textarea readonly cols="35" rows="5">{{translated_val}}</textarea></div>
-        <br>
         <center><button type="submit" class="btn btn-success">Summarize</button><br><br>
             </form>
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-primary">Analyze</button>&nbsp;
+                <a href="/analyze"><button type="button" class="btn btn-primary">Analyze</button>&nbsp;</a>
                 <a href="/translate"><button type="button" class="btn btn-primary">Translate</button>&nbsp;</a>
-                <button type="button" class="btn btn-primary">Visualize</button>&nbsp;
             </div><br><br>
         </center>
+        <div class="row"><textarea readonly cols="35" rows="5" style="border:none;">{{translated_val}}</textarea></div>
+        <br>
     </div>
 </body>
-
 </html>
